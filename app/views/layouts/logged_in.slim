@@ -1,0 +1,40 @@
+doctype html
+html ng-app="notekatApp"
+  head
+    title Notekat
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href="#" Notekat
+    .container-fluid
+      .row
+        #left-menu.col-md-2
+          h2 Your notebooks
+          ul
+            li Test
+            - @notebooks.each do |notebook|
+              li notebook.name
+          button.btn data-toggle="modal" data-target=".bs-example-modal-sm" Test
+
+        #notes.col-md-9 ng-controller="NotesCtrl"
+          .note ng-repeat="note in notes"
+            p 
+              | Test {{note.text}}
+          = yield
+
+    .modal.fade.bs-example-modal-sm tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+      .modal-dialog.modal-sm
+        .modal-content
+          .modal-header
+            button.close type="button" data-dismiss="modal"
+              span aria-hidden="true" &times;
+              span.sr-only Close
+            h4.modal-title Modal title
+          .modal-body
+            = form_tag(notebooks_path, method: "post", class: "form-horizontal")
+              = text_field_tag("notebook['name']")
+              = submit_tag("Create notebook", class: "btn btn-pprimary")

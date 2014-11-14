@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113133937) do
+ActiveRecord::Schema.define(version: 20141113174442) do
 
-  create_table "folders", force: true do |t|
+  create_table "notebooks", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
+    t.integer  "user_id"
   end
+
+  add_index "notebooks", ["ancestry"], name: "index_notebooks_on_ancestry", using: :btree
 
   create_table "notes", force: true do |t|
     t.text    "text"
