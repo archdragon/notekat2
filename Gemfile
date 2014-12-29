@@ -51,4 +51,8 @@ gem 'ancestry'
 # Version history for our notes
 gem 'paper_trail', '~> 3.0.6'
 
+# Views
 gem 'bootstrap_form'
+
+# Markdown
+gem 'redcarpet', '~> 3.0.0'
