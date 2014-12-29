@@ -1,12 +1,15 @@
+$background-color1: rgba(236, 240, 241, 1);
+$background-color2: rgba(255, 255, 255, 1);
+$background-color3: rgba(192, 57, 43, 1);
+
 body, html {
+  background-image: image-url("bg.jpg");
+  background-size: cover;
   height: 100%;
 }
 
-body {
-  background-color: #303741;
-}
-
 .container-flexbox {
+  background-color: $background-color1;
   display: flex;
   height: 100%;
   width: 100%;
@@ -15,6 +18,15 @@ body {
 
 #left-menu, #main {
   padding: 2rem;
+}
+
+#left-menu {
+  background-color: $background-color3;
+}
+
+#middle-menu {
+  background-color: $background-color2;
+  width: 50px;
 }
 
 #main {
@@ -27,7 +39,7 @@ body {
 
   .icon {
     color: black;
-    background-color: white;
+    background-color: rgba(231, 76, 60,1.0);
     width: 3rem;
     height: 3rem;
     float: left;
@@ -42,7 +54,7 @@ body {
   .link-block {
     height: 3rem;
     a {
-      color: white;
+      color: #ffffff;
       margin-left: 6px;
       line-height: 3rem;
       vertical-align: middle;
@@ -75,7 +87,7 @@ body {
 }
 
 .note {
-  background-color: white;
+  background-color: $background-color2;
   position: relative;
   padding: 1rem 2rem;
   margin-bottom: 2rem
