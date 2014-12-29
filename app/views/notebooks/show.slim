@@ -1,7 +1,7 @@
 - @notes.each do |note|
   .note id="note#{note.id}"
     p 
-      = markdown(note.text)
+      = format_note(note.text)
     a.btn.btn-default.btn-edit data-id="note#{note.id}"
       span.glyphicon.glyphicon-pencil
       '  Edit note

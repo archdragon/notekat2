@@ -19,4 +19,16 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def format_note(text)
+    hashtag_regular_expression = /#(\w+)/
+
+    hashtags = text.scan(hashtag_regular_expression)
+
+    # TODO: change tags/ to use tag_url or path
+    text_formatted = text.gsub(hashtag_regular_expression, "[#\\1](/tags/\\1)")
+    text_formatted = markdown(text_formatted)
+    
+    text_formatted
+  end
 end
