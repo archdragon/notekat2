@@ -1,1 +1,13 @@
-a.btn.btn-primary Create Note
+- @notes.each do |note|
+  .note id="note#{note.id}"
+    = note.text
+    a.btn.btn-default.btn-edit data-id="note#{note.id}"
+      span.glyphicon.glyphicon-pencil
+      '  Edit note
+    .hidden-form
+      = bootstrap_form_for([@current_notebook, note], html: {method: "patch"}) do |f|
+        = f.text_area(:text, rows: 15)
+        = f.submit("Save text")
+  hr
+= bootstrap_form_for([@current_notebook, Note.new], html: {method: "post"}) do |f|
+  = f.submit("New note")

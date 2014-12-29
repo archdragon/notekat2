@@ -1,1 +1,0 @@
-var notekatApp = angular.module('notekatApp', []);

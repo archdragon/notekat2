@@ -1,6 +1,5 @@
-$(function() {
-    $(window).resize(function() {
-        $('#left-menu').height($(window).height() - $('#left-menu').offset().top);
-    });
-    $(window).resize();
+$(document).ready(function(){
+  $(".note .btn-edit").click(function(){
+    $("#"+$(this).data("id")+" .hidden-form").slideToggle();
+  });
 });

@@ -1,9 +1,70 @@
+body, html {
+  height: 100%;
+}
+
+.container-flexbox {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+
+#left-menu, #main {
+  padding: 1rem;
+}
+
+#main {
+  width: 100%;
+}
+
 #left-menu {
   color: white;
   background-color: #303741;
-  height: 100%;
+  width: 300px;
+
+  .icon {
+    color: black;
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    text-align: center;
+
+    span {
+      line-height: 3rem;
+      vertical-align: middle;
+    }
+  }
+
+  .link-block {
+    height: 3rem;
+    a {
+      color: white;
+      margin-left: 6px;
+      line-height: 3rem;
+      vertical-align: middle;
+    }
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    clear: both;
+    margin-bottom: 1rem;
+    list-style-type: none;
+  }
 }
 
 .navbar {
   margin: 0;
+}
+
+.hidden-form {
+  display: none;
+}
+
+.btn-edit {
+  float: right;
 }

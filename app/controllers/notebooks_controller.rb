@@ -8,7 +8,7 @@ class NotebooksController < ApplicationController
   end
 
   def create
-    @notebook = Notebook.new(name: params[:notebook][:name], user_id: current_user.id)
+    @notebook = Notebook.new(name: params[:name], user_id: current_user.id)
     if @notebook.save
       redirect_to notebook_path(@notebook)
     else
