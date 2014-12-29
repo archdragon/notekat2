@@ -2,6 +2,10 @@ body, html {
   height: 100%;
 }
 
+body {
+  background-color: #303741;
+}
+
 .container-flexbox {
   display: flex;
   height: 100%;
@@ -10,7 +14,7 @@ body, html {
 }
 
 #left-menu, #main {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 #main {
@@ -19,7 +23,6 @@ body, html {
 
 #left-menu {
   color: white;
-  background-color: #303741;
   width: 300px;
 
   .icon {
@@ -66,5 +69,14 @@ body, html {
 }
 
 .btn-edit {
-  float: right;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.note {
+  background-color: white;
+  position: relative;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem
 }
