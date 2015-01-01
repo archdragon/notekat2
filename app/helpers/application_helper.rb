@@ -22,6 +22,7 @@ module ApplicationHelper
 
   def format_note(text)
     hashtag_regular_expression = /#(\w+)/
+    text ||= ''
 
     hashtags = text.scan(hashtag_regular_expression)
 

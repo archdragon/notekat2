@@ -9,21 +9,23 @@ html
   body
     .container-flexbox
       #left-menu
-        .row
-          .col-sm-12
-            h2 Your notebooks
-            ul
-              - @notebooks.each do |notebook|
-                li
-                  .icon 
-                    span x
-                  .link-block
-                    =link_to(notebook.name, notebook_path(notebook))
-            button.btn data-toggle="modal" data-target=".bs-example-modal-sm" Test
-
-      #middle-menu
+        .top-row
+          h2.no-margin Hi
+        .inner
+          ul
+            - @notebooks.each do |notebook|
+              li
+                .icon 
+                  span
+                    span.glyphicon.glyphicon-pencil
+                .link-block
+                  =link_to(notebook.name, notebook_path(notebook))
+          button.btn data-toggle="modal" data-target=".bs-example-modal-sm" Test
       #main
-        = yield
+        .top-row
+          h2.no-margin Test
+        .inner
+          = yield
 
     .modal.fade.bs-example-modal-sm tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
       .modal-dialog.modal-sm
