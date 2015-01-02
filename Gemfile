@@ -59,3 +59,5 @@ gem 'redcarpet', '~> 3.0.0'
 
 # Tags
 gem 'acts-as-taggable-on', '~> 3.4'
+
+gem "simple_calendar", "~> 1.1.0"
