@@ -32,8 +32,31 @@ body, html {
   padding: 0rem;
 }
 
-.top-row {
-  padding: 1rem;
+.top-row, #top-menu {
+  height: 6rem;
+  h2 {
+    display: inline-block;
+    padding: 1rem;
+  }
+}
+
+#top-menu {
+  float: right;  
+  vertical-align: middle;
+ 
+  a {
+    display: inline-block;
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0 2rem;
+  }
+
+  a:hover {
+    background-color: $background-color1;
+    text-decoration: none;
+  }
+
+  padding-right: 2rem;
 }
 
 #left-menu .top-row {
@@ -57,6 +80,10 @@ body, html {
 
 #main {
   width: 100%;
+
+  h2 {
+    float: left;
+  }
 }
 
 #left-menu {

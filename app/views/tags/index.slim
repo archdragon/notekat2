@@ -1,0 +1,7 @@
+.container
+  - if !@tags.empty?
+    = @tags.each do |tag|
+      = tag.inspect
+  - else
+    | No tags yet. Add a hashtag to your note
+  end

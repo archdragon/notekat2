@@ -56,3 +56,6 @@ gem 'bootstrap_form'
 
 # Markdown
 gem 'redcarpet', '~> 3.0.0'
+
+# Tags
+gem 'acts-as-taggable-on', '~> 3.4'

@@ -10,7 +10,7 @@ html
     .container-flexbox
       #left-menu
         .top-row
-          h2.no-margin Hi
+          h2.no-margin Notekat
         .inner
           ul
             - @notebooks.each do |notebook|
@@ -24,6 +24,11 @@ html
       #main
         .top-row
           h2.no-margin Test
+          #top-menu
+            a Folders
+            a  Tags
+            a  Calendar
+          .clearfix
         .inner
           = yield
 
