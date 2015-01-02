@@ -24,10 +24,8 @@ module ApplicationHelper
     hashtag_regular_expression = /#(\w+)/
     text ||= ''
 
-    hashtags = text.scan(hashtag_regular_expression)
-
-    # TODO: change tags/ to use tag_url or path
-    text_formatted = text.gsub(hashtag_regular_expression, "[#\\1](/tags/\\1)")
+    hashtags = NotekatTags::Extractor.extract_tags(text)
+    text_formatted = NotekatTags::Formatter.format(text)
     text_formatted = markdown(text_formatted)
     
     text_formatted
