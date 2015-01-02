@@ -26,8 +26,9 @@ module ApplicationHelper
 
     hashtags = NotekatTags::Extractor.extract_tags(text)
     text_formatted = NotekatTags::Formatter.format(text)
+    text_formatted = "Empty note. \n\n\n Click the button on the right to add some text!" if text_formatted == ""
     text_formatted = markdown(text_formatted)
-    
+
     text_formatted
   end
 end
