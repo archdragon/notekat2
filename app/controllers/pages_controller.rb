@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def index
     if user_signed_in?
       @notebooks = current_user.notebooks
-      render layout: "logged_in"
+      render "index_logged_in", layout: "logged_in"
     end
   end
 end
