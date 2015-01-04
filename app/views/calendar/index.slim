@@ -3,5 +3,8 @@
     = month_calendar table: {class: "table"}, events: @versions do |date, versions|
       = date.day
 
-      - versions.each do |version|
-        .version = version.event
+      .version-icons
+        - versions.each do |version|
+          = render partial: "version_event", locals: {version_data: version}
+
+= javascript_include_tag 'calendar'

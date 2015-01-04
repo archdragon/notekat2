@@ -1,0 +1,23 @@
+div class="label label-default version version-#{version_data.event}"
+  - case version_data.event
+  - when "create"
+    = "c"
+  - when "destroy"
+    = "d"
+  - else
+    = "u"
+
+  .hidden2.popover-data
+    .title 
+      = version_data.event
+      '  note
+    .content
+      p
+        span.glyphicon.glyphicon-time
+        span 
+          '  Time
+      p
+        span.glyphicon.glyphicon-book    
+        span 
+          '  
+          = version_data.notebook_name
