@@ -18,7 +18,7 @@ class NotebooksController < ApplicationController
 
   def show
     @notebooks = current_user.notebooks
-    @current_notebook = @notebooks.where(id: params[:id]).first
-    @notes = @current_notebook.notes
+    @notebook = @notebooks.where(id: params[:id]).first
+    @notes = @notebook.notes
   end
 end
