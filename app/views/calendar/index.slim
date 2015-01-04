@@ -1,4 +1,7 @@
 .basic-container
   #calendar
-    = month_calendar table: {class: "table"} do |date|
+    = month_calendar table: {class: "table"}, events: @versions do |date, versions|
       = date.day
+
+      - versions.each do |version|
+        .version = version.event
