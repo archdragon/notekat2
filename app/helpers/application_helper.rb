@@ -31,4 +31,17 @@ module ApplicationHelper
 
     text_formatted
   end
+
+  def page_header
+    case controller_name
+    when "notebooks"
+      @notebook.name
+    when "tags"
+      "Your tags"
+    when "calendar"
+      "Calendar view"
+    else
+      controller_name
+    end
+  end
 end
