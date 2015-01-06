@@ -39,6 +39,9 @@
   margin: 0 2px 2px 0;
   cursor: pointer;
 
+  width: 22px;
+  text-align: center;
+
   &:hover {
     opacity: 0.8;
   }
@@ -54,4 +57,14 @@
 
 .version-destroy {
   background-color: #c0392b;
+}
+
+.calendar-header {
+  text-align: center;
+
+  a {
+    padding: 0 5px;
+  }
+
+  padding: 2rem;
 }

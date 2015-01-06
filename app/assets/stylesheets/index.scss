@@ -6,10 +6,13 @@ $background-color4: rgba(231, 76, 60,1.0);
 $font-color1: rgba(255, 255, 255, 1);
 $font-color2: rgba(80, 80, 80, 1);
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 body, html {
   background-size: cover;
   height: 100%;
   color: $font-color2;
+  font-family: "Open Sans";
 }
 
 .container-flexbox {
