@@ -1,9 +1,11 @@
 .note id="note#{note.id}"
   p 
     = format_note(note.text)
-  a.btn.btn-default.btn-edit data-id="note#{note.id}"
-    span.glyphicon.glyphicon-pencil
-    '  Edit note
+  .buttons
+    a.btn.btn-default.btn-edit data-id="note#{note.id}"
+      span.glyphicon.glyphicon-pencil
+      '  Edit note
+    = link_to('<span class="glyphicon glyphicon-remove"></span>'.html_safe, notebook_note_path(note.notebook, note), method: :delete, class: "btn btn-default btn-destroy", data: { id: "note#{note.id}" })
   .hidden-form
     = bootstrap_form_for([note.notebook, note], html: {method: "patch"}) do |f|
       = f.text_area(:text, rows: 15)

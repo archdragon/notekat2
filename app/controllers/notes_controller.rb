@@ -7,7 +7,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = @notebook.notes.find(params[:id])
+    @note = current_user.notes.find(params[:id])
     @note.text = params[:note][:text]
     @note.tags.delete_all
     current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
@@ -27,6 +27,13 @@ class NotesController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def destroy
+    @note = current_user.notes.find(params[:id])
+    @note.tags.delete_all
+    @note.destroy
+    redirect_to notebook_path(@notebook)
   end
 
   def show_by_tag
