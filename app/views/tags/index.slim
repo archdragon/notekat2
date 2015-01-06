@@ -1,8 +1,7 @@
-.container
+.basic-container
   - if !@tags.empty?
     - @tags.each do |tag|
-      = tag.name
+      = render partial: "shared/tag", locals: {tag: tag}
       ' 
   - else
     | No tags yet. Add a hashtag to your note
-  end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :calendar, only: [:index]
 
-  get "notes/tag/:tag" => 'notes#show_by_tag'
+  get "notes/tag/:tag", to: 'notes#show_by_tag', as: "notes_tag"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
