@@ -15,7 +15,8 @@ div class="label label-default version version-#{version_data.event}"
       p
         span.glyphicon.glyphicon-time
         span 
-          '  Time
+          '  
+          = version_data.created_at.to_s(:short)
       p
         span.glyphicon.glyphicon-book    
         span 
