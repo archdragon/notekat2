@@ -4,6 +4,7 @@ $background-color3: #2c3e50;
 $background-color4: #34495e;
 
 $bar-background-color1: #3498db;
+$bar-background-color2: #2980b9;
 
 $font-color1: rgba(255, 255, 255, 1);
 $font-color2: rgba(80, 80, 80, 1);
@@ -41,7 +42,7 @@ body, html {
   height: 6rem;
   h2 {
     display: inline-block;
-    padding: 1rem;
+    padding: 1.5rem 0 0rem 1rem;
   }
 }
 
@@ -58,8 +59,7 @@ body, html {
   }
 
   a:hover {
-    color: $bar-background-color1;
-    background-color: $background-color1;
+    background-color: $bar-background-color2;
     text-decoration: none;
   }
 
@@ -67,7 +67,7 @@ body, html {
 }
 
 #left-menu .top-row {
-  background-color: $background-color4;
+  background-color: $bar-background-color2;
 }
 
 #main .top-row {
@@ -217,4 +217,29 @@ body, html {
 
 a {
   color: #2980b9;
+}
+
+h2 {
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+
+#top-menu .dropdown-menu {
+  li {
+    height: 4rem;
+    padding: 0;
+  }
+  a {
+    color: $font-color2;
+    line-height: 4rem;
+    height: 4rem;
+    vertical-align: middle;
+    display: block;
+    margin: 0;
+    padding: 0 1.5rem;
+  }
+  a:hover {
+    color: $font-color1;
+    background-color: $bar-background-color1;
+  }
 }

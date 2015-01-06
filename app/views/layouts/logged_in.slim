@@ -25,9 +25,14 @@ html
         .top-row
           h2.no-margin = page_header
           #top-menu
-            a Folders
             = link_to 'Tags', tags_path
             = link_to 'Calendar', calendar_index_path
+            span.dropdown
+              a data-toggle="dropdown"
+                span.glyphicon.glyphicon-cog
+              ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdown-menu-top"
+                li role="presentation"
+                  = link_to('Log out', destroy_user_session_path, :role => "menuitem", :method => :delete)
           .clearfix
         .inner
           = yield
