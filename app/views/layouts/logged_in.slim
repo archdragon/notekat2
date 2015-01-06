@@ -20,7 +20,7 @@ html
                     span.glyphicon.glyphicon-pencil
                 .link-block
                   =link_to(notebook.name, notebook_path(notebook))
-          button.btn data-toggle="modal" data-target=".bs-example-modal-sm" New notebook
+          button#new-notebook.btn data-toggle="modal" data-target=".bs-example-modal-sm" New notebook
       #main
         .top-row
           h2.no-margin = page_header

@@ -11,8 +11,8 @@
     position: relative;
 
     &.prev-month, &.next-month {
-      background-color: #f5f5f5;
-      color: #aaa;
+      background-color: #f8f8f8;
+      color: #ccc;
     }
   }
 
@@ -48,11 +48,11 @@
 }
 
 .version-create {
-  background-color: #27ae60;
+  background-color: #2ecc71;
 }
 
 .version-update {
-  background-color: #2980b9;
+  background-color: #3498db;
 }
 
 .version-destroy {

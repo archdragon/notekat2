@@ -1,7 +1,9 @@
 $background-color1: rgba(236, 240, 241, 1);
 $background-color2: rgba(255, 255, 255, 1);
-$background-color3: rgba(192, 57, 43, 1);
-$background-color4: rgba(231, 76, 60,1.0);
+$background-color3: #2c3e50;
+$background-color4: #34495e;
+
+$bar-background-color1: #3498db;
 
 $font-color1: rgba(255, 255, 255, 1);
 $font-color2: rgba(80, 80, 80, 1);
@@ -48,6 +50,7 @@ body, html {
   vertical-align: middle;
  
   a {
+    color: #fff;
     display: inline-block;
     height: 6rem;
     line-height: 6rem;
@@ -55,6 +58,7 @@ body, html {
   }
 
   a:hover {
+    color: $bar-background-color1;
     background-color: $background-color1;
     text-decoration: none;
   }
@@ -64,6 +68,11 @@ body, html {
 
 #left-menu .top-row {
   background-color: $background-color4;
+}
+
+#main .top-row {
+  color: #fff;
+  background-color: $bar-background-color1;
 }
 
 #left-menu {
@@ -103,7 +112,7 @@ body, html {
     height: 4rem;
     float: left;
     text-align: center;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
 
     span {
       line-height: 4rem;
@@ -120,15 +129,23 @@ body, html {
     height: 4rem;
     a {
       color: $font-color1;
-      margin-left: 8px;
+      margin-left: 1.5rem;
       line-height: 4rem;
       vertical-align: middle;
     }
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    a:hover {
+      text-decoration: none;
+    }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    &:hover {
+      background-color: $background-color4;
+      cursor: pointer;
+    }
   }
 
   ul {
     padding: 0;
+    margin-bottom: 0;
   }
 
   li {
@@ -174,4 +191,30 @@ body, html {
 
 .hidden2 {
   display: none;
+}
+
+#new-notebook {
+  color: $font-color1;
+  background-color: $background-color4;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#new-notebook:hover {
+  background-color: lighten($background-color4, 2%);
+}
+
+.btn-default {
+  color: #777;
+  background-color: #ecf0f1;
+  border-width: 0;
+}
+
+.new_note .btn {
+  background-color: #fff;
+}
+
+a {
+  color: #2980b9;
 }
