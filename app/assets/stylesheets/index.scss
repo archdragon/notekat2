@@ -34,6 +34,11 @@ body, html {
   padding: 2rem;
 }
 
+#main .dropdown {
+  display: inline-block;
+  height: 80%;
+}
+
 #left-menu .inner {
   padding: 0rem;
 }
@@ -58,7 +63,7 @@ body, html {
     padding: 0 2rem;
   }
 
-  a:hover {
+  a:hover, .open>a {
     background-color: $bar-background-color2;
     text-decoration: none;
   }
@@ -165,8 +170,8 @@ body, html {
 
 .btn-edit {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
 }
 
 .note, .basic-container {
@@ -239,7 +244,7 @@ h2 {
     padding: 0 1.5rem;
   }
   a:hover {
-    color: $font-color1;
-    background-color: $bar-background-color1;
+    background-color: #ecf0f1;
+    color: lighten($font-color2, 5%);
   }
 }
