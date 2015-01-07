@@ -51,7 +51,7 @@ production:
   <<: *default
   database: note2_production
   username: note2
-  password: <%= ENV['NOTEKAT2_DATABASE_PASSWORD'] %>
+  password: <%= /home/deployer/apps/notekat/database_password %>
 
 cucumber:
   <<: *test
