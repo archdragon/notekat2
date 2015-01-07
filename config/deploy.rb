@@ -41,6 +41,13 @@ set :scm, :git
 
 namespace :deploy do
 
+  desc "Set secret end production environment"
+  task :set_env_variables do
+    on roles(:app) do
+      execute "source ~/apps/notekat/scripts/environment.sh"
+    end
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -51,3 +58,5 @@ namespace :deploy do
   end
 
 end
+
+before "deploy:compile_assets", "deploy:set_env_variables"
