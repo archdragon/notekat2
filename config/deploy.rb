@@ -59,4 +59,4 @@ namespace :deploy do
 
 end
 
-before "deploy", "deploy:set_env_variables"
+before "deploy:compile_assets", "deploy:set_env_variables"
