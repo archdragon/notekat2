@@ -328,7 +328,13 @@ body#not_logged_in {
     a {
       vertical-align: middle;
       font-size: 1.6rem;
-      color: $font-color1;
+    }
+  }
+
+  a {
+    color: $font-color1;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
