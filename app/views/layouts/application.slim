@@ -6,5 +6,8 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  body
+  body#not_logged_in
+    section#welcome-bar
+      h1 Notekat
+      p.pull-right =link_to('<span class="glyphicon glyphicon-user"></span> Log in'.html_safe, new_user_session_path)
     = yield

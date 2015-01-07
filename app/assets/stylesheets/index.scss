@@ -252,3 +252,83 @@ h2 {
     color: lighten($font-color2, 5%);
   }
 }
+
+.centered {
+  text-align: center;
+}
+
+.centered-vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.stretched-full {
+  width: 100%;
+  height: 100%;
+}
+
+/* Welcome page and not logged in */
+
+body#not_logged_in {
+  background-image: asset-url("bg_notebook2.jpg");
+  color: $font-color1;
+}
+
+#welcome {
+  h2 {
+    font-size: 6rem;
+    margin-top: 22rem;
+  }
+  p {
+    padding: 1.5rem;
+  }
+  p, .btn {
+    font-size: 2.5rem;
+  }
+  .btn {
+    padding: 1rem 2rem;
+  }
+}
+
+.section-header {
+  height: 100%;
+}
+
+.section-body {
+  color: $font-color2;
+  background-color: $background-color2;
+  padding: 9rem 0;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+#welcome-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  padding: 2rem 3rem;
+
+  h1, p {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    height: 3rem;
+    line-height: 3rem;
+    a {
+      vertical-align: middle;
+      font-size: 1.6rem;
+      color: $font-color1;
+    }
+  }
+}
