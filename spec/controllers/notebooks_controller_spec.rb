@@ -1,8 +1,10 @@
 require "rails_helper"
 
 RSpec.describe NotebooksController, :type => :controller do
-  before(:each) do 
+  setup do
     @request.env["devise.mapping"] = Devise.mappings[:user]
+  end
+  before(:each) do
     @user = FactoryGirl.create(:user_with_notebooks)
     sign_in @user
   end
