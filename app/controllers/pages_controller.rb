@@ -4,7 +4,16 @@ class PagesController < ApplicationController
   def index
     if user_signed_in?
       @notebooks = current_user.notebooks
-      render "index_logged_in", layout: "logged_in"
+
+      if @notebooks.size == 0
+        notebook = Notebook.new(name: "First Notebook", user: current_user)
+        notebook.save
+        @notebooks.reload
+      end
+
+      redirect_to notebook_path(@notebooks.first)
+      #render "index_logged_in", layout: "logged_in"
+
     end
   end
 end
