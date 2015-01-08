@@ -22,7 +22,8 @@ html
                     span.glyphicon.glyphicon-pencil
                 .link-block
                   =link_to(notebook.name, notebook_path(notebook))
-          button#new-notebook.btn data-toggle="modal" data-target=".bs-example-modal-sm" New notebook
+
+          button#new-notebook.btn data-toggle="modal" data-target=".new-notebook-modal" New notebook
       #main
         .top-row
           h2.no-margin
@@ -33,9 +34,9 @@ html
                 span.caret
               ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-notebook"
                 li role="presentation"
-                  a Edit name
+                  a data-toggle="modal" data-target=".edit-notebook-modal" Edit name
                 li
-                  a Destroy
+                  a data-toggle="modal" data-target=".destroy-notebook-modal" Delete
           #top-menu
             = link_to 'Notes', root_path
             = link_to 'Tags', tags_path
@@ -50,7 +51,7 @@ html
         .inner
           = yield
 
-    .modal.fade.bs-example-modal-sm tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+    .modal.fade.new-notebook-modal tabindex="-1" role="dialog" aria-hidden="true"
       .modal-dialog.modal-sm
         .modal-content
           .modal-header
@@ -58,7 +59,49 @@ html
               span aria-hidden="true" &times;
               span.sr-only Close
             h4.modal-title Create new notebook
-          .modal-body
-            = bootstrap_form_tag(url: notebooks_path, method: "post", class: "form-horizontal") do |f|
+          = bootstrap_form_for(Notebook.new, class: "form-horizontal") do |f|
+            .modal-body
               = f.text_field :name
+            .modal-footer
               = f.submit("Create notebook", class: "btn btn-primary")
+
+    - if @notebook
+      .modal.fade.edit-notebook-modal tabindex="-1" role="dialog" aria-hidden="true"
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              button.close type="button" data-dismiss="modal"
+                span aria-hidden="true" &times;
+                span.sr-only Close
+              h4.modal-title 
+                = @notebook.name
+                ' - Change notebook name
+            = bootstrap_form_for(@notebook, class: "form-horizontal") do |f|
+              .modal-body
+                = f.text_field :name
+              .modal-footer
+                = f.submit("Change name", class: "btn btn-primary")
+                ' 
+                button type="button" class="btn btn-default" data-dismiss="modal" Close
+
+      .modal.fade.destroy-notebook-modal tabindex="-1" role="dialog" aria-hidden="true"
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              button.close type="button" data-dismiss="modal"
+                span aria-hidden="true" &times;
+                span.sr-only Close
+              h4.modal-title 
+                = @notebook.name
+                ' - Destroy
+            = bootstrap_form_for(@notebook, class: "form-horizontal", method: :delete) do |f|
+              .modal-body
+                ' Are you sure you want to destroy 
+                strong
+                  = @notebook.name
+                '  notebook?
+              .modal-footer
+                = f.submit("Destroy", class: "btn btn-danger")
+                ' 
+                button type="button" class="btn btn-default" data-dismiss="modal" Close
+

@@ -20,6 +20,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(notebook: @notebook, text: params[:note][:text])
+    current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
     if @note.save
       redirect_to notebook_path(@notebook)
     else
