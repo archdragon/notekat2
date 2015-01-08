@@ -11,7 +11,8 @@ html
     .container-flexbox
       #left-menu
         .top-row
-          h2.no-margin Notekat
+          h2.no-margin 
+            = link_to "Notekat", root_path
         .inner
           ul
             - @notebooks.each do |notebook|
@@ -24,10 +25,21 @@ html
           button#new-notebook.btn data-toggle="modal" data-target=".bs-example-modal-sm" New notebook
       #main
         .top-row
-          h2.no-margin = page_header
+          h2.no-margin
+            span.dropdown.dropdown-notebook
+              a data-toggle="dropdown"
+                = page_header
+                '  
+                span.caret
+              ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-notebook"
+                li role="presentation"
+                  a Edit name
+                li
+                  a Destroy
           #top-menu
+            = link_to 'Notes', root_path
             = link_to 'Tags', tags_path
-            = link_to 'Calendar', calendar_index_path
+            = link_to 'History', calendar_index_path
             span.dropdown
               a data-toggle="dropdown"
                 span.glyphicon.glyphicon-cog

@@ -1,3 +1,7 @@
+@import "compass/css3";
+ 
+@import "compass/utilities";
+
 $background-color1: rgba(236, 240, 241, 1);
 $background-color2: rgba(255, 255, 255, 1);
 $background-color3: #2c3e50;
@@ -36,7 +40,24 @@ body, html {
 
 #main .dropdown {
   display: inline-block;
-  height: 80%;
+  height: 100%;
+}
+
+/* dropdowns */
+.dropdown ul {
+  padding: 0;
+  background-color: $background-color3;
+  border-width: 0;
+  margin: 0;
+  @include border-radius(0px);
+}
+
+.dropdown-notebook li {
+  border-left: 1px solid $background-color4;
+}
+
+.dropdown a {
+  cursor: pointer;
 }
 
 #left-menu .inner {
@@ -46,8 +67,32 @@ body, html {
 .top-row, #top-menu {
   height: 6rem;
   h2 {
+    a {
+      color: $font-color1;
+      line-height: 6rem;
+      padding: 0 1.5rem;
+      height: 6rem;
+      display: inline-block;
+      &:hover {
+        background-color: $bar-background-color2;
+        text-decoration: none;
+      }
+    }
+    .dropdown > a {
+      border-left: 1px solid $bar-background-color2;
+      &:hover {
+        border-left: 1px solid $bar-background-color1;
+      }
+    }
+    .dropdown.open > a {
+      background-color: $bar-background-color2;
+      border-left: 1px solid $bar-background-color1;
+    }
     display: inline-block;
-    padding: 1.5rem 0 0rem 1rem;
+    height: 100%;
+    vertical-align: middle;
+
+    /* padding: 1.5rem 0 0rem 1rem; */
   }
 }
 
@@ -233,13 +278,13 @@ h2 {
   vertical-align: middle;
 }
 
-#top-menu .dropdown-menu {
+.top-row .dropdown-menu, #top-menu .dropdown-menu {
   li {
     height: 4rem;
     padding: 0;
   }
   a {
-    color: $font-color2;
+    color: $font-color1;
     line-height: 4rem;
     height: 4rem;
     vertical-align: middle;
@@ -248,8 +293,8 @@ h2 {
     padding: 0 1.5rem;
   }
   a:hover {
-    background-color: #ecf0f1;
-    color: lighten($font-color2, 5%);
+    background-color: $background-color4;
+    color: darken($font-color1, 5%);
   }
 }
 
