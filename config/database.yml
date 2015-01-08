@@ -51,7 +51,7 @@ production:
   <<: *default
   database: note2_production
   username: note2
-  password: <%= File.read("/home/deployer/apps/notekat/scripts/database_password") %>
+  password: <%= File.read("/home/deployer/apps/notekat/scripts/database_password") if Rails.env.production? %>
 
 cucumber:
   <<: *test
