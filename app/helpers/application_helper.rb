@@ -35,7 +35,7 @@ module ApplicationHelper
   def page_header
     case controller_name
     when "notebooks"
-      @notebook.name
+      @notebook.name || notebook_path(@notebook)
     when "tags"
       "Your tags"
     when "calendar"
