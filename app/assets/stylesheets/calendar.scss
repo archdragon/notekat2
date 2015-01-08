@@ -1,3 +1,7 @@
+@import "compass/css3";
+ 
+@import "compass/utilities";
+
 #calendar {
   td {
     height: 110px;
@@ -33,10 +37,11 @@
 }
 
 .version {
+  @include border-radius(0px);
   font-size: 12px;
   display: inline-block;
   float: left;
-  margin: 0 2px 2px 0;
+  margin: 0 0px 0px 0;
   cursor: pointer;
 
   width: 22px;
@@ -48,7 +53,7 @@
 }
 
 .version-create {
-  background-color: #2ecc71;
+  background-color: #1abc9c;
 }
 
 .version-update {
@@ -56,7 +61,7 @@
 }
 
 .version-destroy {
-  background-color: #c0392b;
+  background-color: #e74c3c;
 }
 
 .calendar-header {

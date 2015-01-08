@@ -16,12 +16,10 @@ class NotesController < ApplicationController
     else
       redirect_to notebook_path(@notebook), alert: "There was a problem saving your note!"
     end
-    
-    
   end
 
   def create
-    @note = Note.new(notebook: @notebook)
+    @note = Note.new(notebook: @notebook, text: params[:note][:text])
     if @note.save
       redirect_to notebook_path(@notebook)
     else

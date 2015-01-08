@@ -1,3 +1,6 @@
 = render @notes
-= bootstrap_form_for([@notebook, Note.new], html: {method: "post"}) do |f|
-  = f.submit("New note")
+.note id="new-note"
+  p 
+    = bootstrap_form_for([@notebook, Note.new], html: {method: "post"}) do |f|
+      = f.text_area(:text, rows: 15)
+      = f.submit("New note")
