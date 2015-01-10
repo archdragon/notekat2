@@ -22,3 +22,14 @@ div class="label label-default version version-#{version_data.event}"
         span 
           '  
           = version_data.notebook_name
+      -if version_data.object
+        p
+          span.glyphicon.glyphicon-file
+          span
+          '  
+          = link_to("Show current", current_note_link(version_data))
+        p
+          span.glyphicon.glyphicon-floppy-disk
+          span
+          '  
+          = link_to("Show archived", archived_note_link(version_data))

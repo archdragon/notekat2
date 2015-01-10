@@ -390,3 +390,29 @@ body#not_logged_in {
     }
   }
 }
+
+/* popover */
+.popover, .popover-title, .popover-body {
+  color: $font-color1;
+  @include border-radius(0px);
+  border-width: 0;
+  a {
+    color: $font-color1;
+  }
+}
+
+.popover.right>.arrow {
+  border-right-color: transparent;
+}
+
+.popover {
+  background-color: $bar-background-color2;
+}
+
+.popover .arrow:after {
+  border-right-color: $bar-background-color2 !important;
+}
+
+.popover-title {
+  background-color: $bar-background-color1;
+}
