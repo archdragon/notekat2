@@ -21,5 +21,9 @@ module Notekat2
     # config.i18n.default_locale = :de
 
     config.eager_load_paths += %W( #{config.root}/lib )
+
+    config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+    }
   end
 end
