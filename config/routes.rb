@@ -3,15 +3,17 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
 
-  resources :notebooks do
-    resources :notes
+  authenticate :user do
+    resources :notebooks do
+      resources :notes
+    end
+
+    resources :tags
+
+    resources :calendar, only: [:index]
+
+    get "notes/tag/:tag", to: 'notes#show_by_tag', as: "notes_tag"
   end
-
-  resources :tags
-
-  resources :calendar, only: [:index]
-
-  get "notes/tag/:tag", to: 'notes#show_by_tag', as: "notes_tag"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
