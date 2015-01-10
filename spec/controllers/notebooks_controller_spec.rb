@@ -29,4 +29,39 @@ RSpec.describe NotebooksController, :type => :controller do
       expect(assigns(:notes).size).to eq notebook.notes.size
     end
   end
+
+  describe "POST #create" do
+    context "with valid attributes" do 
+      it "saves the new contact in the database" do
+        expect{ 
+          post :create, notebook: FactoryGirl.attributes_for(:notebook)
+        }.to change(Notebook,:count).by(1) 
+      end
+      it "redirects to the notebook page" do
+        post :create, notebook: FactoryGirl.attributes_for(:notebook)
+        expect(response).to redirect_to Notebook.last
+      end
+    end
+
+    context "with invalid attributes" do
+      it "does not save the new contact in the database" do
+        expect{ 
+          post :create, notebook: FactoryGirl.attributes_for(:invalid_notebook)
+        }.to_not change(Notebook,:count) 
+      end
+      it "redirects to the home page" do
+        post :create, notebook: FactoryGirl.attributes_for(:invalid_notebook)
+        expect(response).to redirect_to root_path
+      end
+    end
+  end
+
+  describe "DELETE #{}destroy" do
+    subject { @user.notebooks.first }
+    it "deletes the notebook" do
+      expect {
+        delete :destroy, id: subject
+      }.to change(Notebook, :count).by(1)
+    end
+  end
 end

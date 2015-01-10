@@ -28,4 +28,9 @@ FactoryGirl.define do
     end
     user
   end
+
+  factory :invalid_notebook, parent: :notebook do
+    name nil
+    user
+  end
 end
