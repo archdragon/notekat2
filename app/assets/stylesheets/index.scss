@@ -332,6 +332,12 @@ body#not_logged_in {
   }
   .btn {
     padding: 1rem 2rem;
+    transition: 0.3s all ease-out;
+  }
+
+  .btn:hover {
+    padding: 1rem 3rem;
+    transition: 0.3s all ease-out;
   }
 }
 
@@ -345,6 +351,7 @@ body#not_logged_in {
   padding: 9rem 0;
 
   h2 {
+    margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
