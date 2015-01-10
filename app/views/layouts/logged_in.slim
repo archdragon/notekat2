@@ -28,15 +28,18 @@ html
         .top-row
           h2.no-margin
             span.dropdown.dropdown-notebook
-              a data-toggle="dropdown"
-                = page_header
-                '  
-                span.caret
-              ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-notebook"
-                li role="presentation"
-                  a data-toggle="modal" data-target=".edit-notebook-modal" Edit name
-                li
-                  a data-toggle="modal" data-target=".destroy-notebook-modal" Delete
+              - if controller_name == "notebooks"
+                a data-toggle="dropdown"
+                  = page_header
+                  '  
+                  span.caret
+                ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-notebook"
+                  li role="presentation"
+                    a data-toggle="modal" data-target=".edit-notebook-modal" Edit name
+                  li
+                    a data-toggle="modal" data-target=".destroy-notebook-modal" Delete
+              - else
+                a = page_header
           #top-menu
             = link_to 'Notes', root_path
             = link_to 'Tags', tags_path
