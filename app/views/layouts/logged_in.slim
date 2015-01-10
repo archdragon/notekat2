@@ -73,9 +73,7 @@ html
               button.close type="button" data-dismiss="modal"
                 span aria-hidden="true" &times;
                 span.sr-only Close
-              h4.modal-title 
-                = @notebook.name
-                ' - Change notebook name
+              h4.modal-title Change notebook name
             = bootstrap_form_for(@notebook, class: "form-horizontal") do |f|
               .modal-body
                 = f.text_field :name
@@ -91,9 +89,7 @@ html
               button.close type="button" data-dismiss="modal"
                 span aria-hidden="true" &times;
                 span.sr-only Close
-              h4.modal-title 
-                = @notebook.name
-                ' - Destroy
+              h4.modal-title Destroy notebook
             = bootstrap_form_for(@notebook, class: "form-horizontal", method: :delete) do |f|
               .modal-body
                 ' Are you sure you want to destroy 
