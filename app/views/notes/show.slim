@@ -1,1 +1,14 @@
+
+.basic-container
+  .notebook-info
+    | Showing a note from 
+    = link_to(@note.notebook.name, notebook_path(@note.notebook)) 
+    ' notebook.
+  - if @note.live?
+    .versions
+      | This is a current version of this note.
+
+- if !@note.live?
+  .basic-container
+    | This is an archived version!
 = render @note

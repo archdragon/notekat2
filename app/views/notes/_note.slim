@@ -3,11 +3,18 @@
     = format_note(note.text)
   .buttons
     a.btn.btn-default.btn-edit data-id="note#{note.id}"
-      span.glyphicon.glyphicon-pencil
-      '  Edit note
-    = link_to('<span class="glyphicon glyphicon-remove"></span>'.html_safe, notebook_note_path(note.notebook, note), method: :delete, class: "btn btn-default btn-destroy", data: { id: "note#{note.id}" })
+      - if note.live?
+        span.glyphicon.glyphicon-pencil
+        '  Edit note
+      - else 
+        | Show source
+    = link_to('<span class="glyphicon glyphicon-remove"></span>'.html_safe, notebook_note_path(note.notebook, note), method: :delete, class: "btn btn-default btn-destroy", data: { id: "note#{note.id}" }) if note.live?
   .hidden-form
-    = bootstrap_form_for([note.notebook, note], html: {method: "patch"}) do |f|
-      = f.text_area(:text, rows: 15)
-      = f.submit("Save text")
+    - if note.live?
+      = bootstrap_form_for([note.notebook, note], html: {method: "patch"}) do |f|
+        = f.text_area(:text, rows: 15)
+        = f.submit("Save text")
+    - else
+      = bootstrap_form_tag do |f|
+        = f.text_area(:text, rows: 15, value: note.text)
 
