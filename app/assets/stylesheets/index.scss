@@ -227,7 +227,10 @@ body, html {
   background-color: $background-color2;
   position: relative;
   padding: 1rem 2rem;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
+  &>h1, &>h2, &>h3 {
+    margin-top: 0;
+  }
 }
 
 .btn,
