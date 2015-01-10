@@ -19,6 +19,11 @@ FactoryGirl.define do
     notebook
   end
 
+  factory :invalid_note, parent: :note do
+    name nil
+    user
+  end
+
   factory :notebook do
     name "Notebook One"
     factory :notebook_with_notes do

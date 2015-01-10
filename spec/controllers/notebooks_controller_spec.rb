@@ -32,25 +32,23 @@ RSpec.describe NotebooksController, :type => :controller do
 
   describe "POST #create" do
     context "with valid attributes" do 
-      it "saves the new contact in the database" do
-        expect{ 
-          post :create, notebook: FactoryGirl.attributes_for(:notebook)
-        }.to change(Notebook,:count).by(1) 
+      let(:request) { -> { post :create, notebook: FactoryGirl.attributes_for(:notebook) } }
+      it "saves the new notebook in the database" do
+        expect(request).to change(Notebook, :count).by(1) 
       end
       it "redirects to the notebook page" do
-        post :create, notebook: FactoryGirl.attributes_for(:notebook)
+        request.call
         expect(response).to redirect_to Notebook.last
       end
     end
 
     context "with invalid attributes" do
-      it "does not save the new contact in the database" do
-        expect{ 
-          post :create, notebook: FactoryGirl.attributes_for(:invalid_notebook)
-        }.to_not change(Notebook,:count) 
+      let(:request) { -> { post :create, notebook: FactoryGirl.attributes_for(:invalid_notebook) } }
+      it "does not save the new notebook in the database" do
+        expect(request).to_not change(Notebook, :count) 
       end
       it "redirects to the home page" do
-        post :create, notebook: FactoryGirl.attributes_for(:invalid_notebook)
+        request.call
         expect(response).to redirect_to root_path
       end
     end
@@ -61,7 +59,7 @@ RSpec.describe NotebooksController, :type => :controller do
     it "deletes the notebook" do
       expect {
         delete :destroy, id: subject
-      }.to change(Notebook, :count).by(1)
+      }.to change(Notebook, :count).by(-1)
     end
   end
 end
