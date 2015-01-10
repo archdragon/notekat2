@@ -8,11 +8,20 @@ Rails.application.routes.draw do
       resources :notes
     end
 
+    resources :notes, only: [:show] do
+      member do
+        get "version/:version_id", :action => "version", as: "version"
+      end
+      collection do
+        get "tag/:tag", action: "show_by_tag", as: "tag"
+      end
+    end
+
     resources :tags
 
     resources :calendar, only: [:index]
 
-    get "notes/tag/:tag", to: 'notes#show_by_tag', as: "notes_tag"
+    #get "notes/tag/:tag", to: 'notes#show_by_tag', as: "notes_tag"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
