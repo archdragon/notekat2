@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  before_filter :select_notebook, :except => [:show_by_tag]
-  layout "logged_in", :only => [:show_by_tag]
+  before_filter :select_notebook, :except => [:show_by_tag, :index]
+  layout "logged_in", :only => [:show_by_tag, :show, :version]
 
   def index
     @notes = @notebook.notes
@@ -10,8 +10,8 @@ class NotesController < ApplicationController
     @note = current_user.notes.find(params[:id])
     @note.text = params[:note][:text]
     @note.tags.delete_all
-    current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
     if @note.save
+      current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
       redirect_to notebook_path(@notebook)
     else
       redirect_to notebook_path(@notebook), alert: "There was a problem saving your note!"
@@ -20,8 +20,8 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(notebook: @notebook, text: params[:note][:text])
-    current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
     if @note.save
+      current_user.tag(@note, with: NotekatTags::Extractor.extract_tags(@note.text), on: :tags)
       redirect_to notebook_path(@notebook)
     else
       redirect_to root_path
@@ -38,6 +38,16 @@ class NotesController < ApplicationController
   def show_by_tag
     @notes = Note.tagged_with(params[:tag])
     render :index
+  end
+
+  def show
+    @note = current_user.notes.find(params[:id])    
+  end
+
+  def version
+    @note = current_user.notes.find(params[:id])
+    @note = @note.versions.find(params[:version_id]).reify
+    render :show
   end
 
   private
