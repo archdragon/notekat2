@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :user do
-    email "user@email.com"
+    sequence :email do |n|
+      "person#{n}@example.com"
+    end
     password "secure_user_password_1234"
 
     factory :user_with_notebooks do
@@ -22,6 +24,17 @@ FactoryGirl.define do
   factory :invalid_note, parent: :note do
     name nil
     user
+  end
+
+  factory :note_with_hashtags, parent: :note do
+    ignore do
+      hashtag_count 1
+    end
+    text do 
+      final_text = ""
+      (1..hashtag_count).each { |n| final_text << "#tag#{n}" } 
+      final_text
+    end
   end
 
   factory :notebook do
