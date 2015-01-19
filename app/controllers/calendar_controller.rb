@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
   layout "logged_in"
   def index
-    @versions = Version.all
+    @versions = Version.where(whodunnit: current_user)
   end
 end
