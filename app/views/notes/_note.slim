@@ -1,6 +1,5 @@
 .note id="note#{note.id}"
-  p 
-    = format_note(note.text)
+  = format_note(note.text)
   .buttons
     a.btn.btn-default.btn-edit data-id="note#{note.id}"
       - if note.live?
