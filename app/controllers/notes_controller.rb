@@ -37,7 +37,8 @@ class NotesController < ApplicationController
 
   def show_by_tag
     @notes = Note.tagged_with(params[:tag])
-    render :index
+    @tag_name = params[:tag]
+    render :by_tag
   end
 
   def show
