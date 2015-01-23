@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner', '~> 1.4.0'
   gem 'factory_girl'
+  gem 'capybara'
 end
 
 # Deployment
@@ -72,4 +73,3 @@ gem 'redcarpet', '~> 3.0.0'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem "simple_calendar", "~> 1.1.0"
-
