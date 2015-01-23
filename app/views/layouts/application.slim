@@ -12,5 +12,5 @@ html
       h1 
         a href="/" Notekat
 
-      p.pull-right =link_to('<span class="glyphicon glyphicon-user"></span> Log in'.html_safe, new_user_session_path)
+      p.pull-right =link_to('<span class="glyphicon glyphicon-user"></span> Log in'.html_safe, new_user_session_path, class: "login-link")
     = yield
