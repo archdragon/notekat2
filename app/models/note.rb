@@ -7,8 +7,4 @@ class Note < ActiveRecord::Base
   def notebook_name
     self.notebook.name
   end
-
-  #def self.for_user(user)
-  #  self.includes(:notebook).where("notebooks.user_id" => user)
-  #end
 end
