@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe NotebooksController, :type => :controller do
+describe NotebooksController, :type => :controller do
   setup do
     @request.env["devise.mapping"] = Devise.mappings[:user]
   end

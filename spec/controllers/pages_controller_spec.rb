@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe PagesController, :type => :controller do  
+describe PagesController, :type => :controller do  
   setup do 
     @request.env["devise.mapping"] = Devise.mappings[:user]
   end
