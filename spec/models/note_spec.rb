@@ -14,18 +14,19 @@ describe Note do
       expect(PaperTrail).to be_enabled
     end
 
-    context "after update" do
+    context "after many updates" do
       let(:updateable_note) {FactoryGirl.build(:note)}
+      let(:number_of_saves) { 2 + rand(6) }
+
       before do
-        (1..3).each do |number|
+        (1..number_of_saves).each do |number|
           updateable_note.text = 'TEXT_' + String(number)
           updateable_note.save
         end
       end
 
-      it "saves old versions" do
-         # expect(updateable_note).to have_a_version_with :text => 'TEXT_1'
-         # expect(updateable_note).to have_a_version_with :text => 'TEXT_2'
+      it "old versions will be saved by the PaperTrail gem" do
+         expect(updateable_note.versions.size).to eq(number_of_saves)
       end
     end
   end
