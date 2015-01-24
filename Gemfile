@@ -7,6 +7,7 @@ gem 'rails', '4.1.1'
 gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'sass', '>= 3.2.0'
 # Mixins for css
 gem 'compass-rails'
 # Better HTML views
