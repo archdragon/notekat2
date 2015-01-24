@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore Gemfile lock - needed because of issues when deploying from Windows machine
-/.Gemfile
+/Gemfile.lock
 
 # Ignore bundler config.
 /.bundle
