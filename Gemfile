@@ -31,9 +31,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner', '~> 1.4.0'
   gem 'factory_girl'
+  gem 'capybara'
 end
-
-gem 'capybara'
 
 # Deployment
 gem 'capistrano',  '~> 3.1'
