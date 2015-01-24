@@ -21,7 +21,7 @@ html
                   span
                     span.glyphicon.glyphicon-pencil
                 .link-block
-                  =link_to(notebook.name, notebook_path(notebook))
+                  =link_to(notebook.name, notebook_path(notebook), class: "notebook-link")
 
           button#new-notebook.btn data-toggle="modal" data-target=".new-notebook-modal" New notebook
       #main
