@@ -6,8 +6,8 @@ gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-gem 'sass', '>= 3.2.0'
+gem 'sass-rails', '~> 4.0.4'
+
 # Mixins for css
 gem 'compass-rails'
 # Better HTML views
