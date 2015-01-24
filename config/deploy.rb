@@ -11,7 +11,7 @@ set :scm, :git
 
 # I'm developing on both windows and linux, so I'm not able to reuse my Gemfile.lock
 # This removes the --deployment flag when doing bundle install and allows me to proceed without the *.lock file
-set :bundle_deployment, nil
+set :bundle_flags, '--quiet' 
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
