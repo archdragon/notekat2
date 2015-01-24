@@ -9,6 +9,10 @@ set :deploy_to, "/home/deployer/apps/notekat"
 # Default value for :scm is :git
 set :scm, :git
 
+# I'm developing on both windows and linux, so I'm not able to reuse my Gemfile.lock
+# This removes the --deployment flag when doing bundle install and allows me to proceed without the *.lock file
+set :bundle_deployment, nil
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
