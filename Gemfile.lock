@@ -205,6 +205,7 @@ DEPENDENCIES
   ancestry
   bootstrap_form
   capistrano (~> 3.1)
+  capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1)
   capistrano-rvm
   capybara
