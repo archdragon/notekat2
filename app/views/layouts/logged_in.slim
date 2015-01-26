@@ -14,7 +14,7 @@ html
           h2.no-margin 
             = link_to "Notekat", root_path
         .inner
-          ul
+          ul#notebook-list
             - @notebooks.each do |notebook|
               li
                 .icon 
