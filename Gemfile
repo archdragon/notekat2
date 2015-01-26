@@ -33,6 +33,7 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.4.0'
   gem 'factory_girl'
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 # Deployment
