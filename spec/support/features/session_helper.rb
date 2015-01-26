@@ -18,7 +18,8 @@ module Features
 
     def sign_in
       user = create(:user)
-      visit sign_in_path
+      visit "/"
+      click_link "Log in"
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       click_button 'Log in'
