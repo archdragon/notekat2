@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :note do
-    text "This is a note text"
+    text "This is a note text\nThis is a note text"
     notebook
   end
 
