@@ -440,3 +440,28 @@ body#not_logged_in {
 .popover-title {
   background-color: $bar-background-color1;
 }
+
+.glyphicon-description {
+  color: $bar-background-color2;
+  padding-right: 1rem;
+}
+
+.round-icon {
+  background-color: $bar-background-color1;
+  border-radius: 50%;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  top: 0.15em;
+}
+
+.round-icon-description {
+  margin-right: 1rem;
+}
+
+.browsing-info {
+  /* border-width: 0;
+  border-left: 8px solid $bar-background-color1;
+  padding-left: 1.5rem; */
+}
