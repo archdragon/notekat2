@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User logs in' do
+feature 'Log in' do
   scenario 'with valid login and password' do
     user = create(:user)
     sign_in_with(user.email, user.password)

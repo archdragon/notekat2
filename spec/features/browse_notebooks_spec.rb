@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User browses notebooks' do
+feature 'browse notebook' do
   scenario 'after login' do
     user = create(:user)
     sign_in_with(user.email, user.password)
