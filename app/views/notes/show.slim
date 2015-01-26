@@ -1,7 +1,7 @@
 
 .basic-container
   .notebook-info
-    | Showing a note from 
+    span.glyphicon.glyphicon-tag Showing a note from 
     = link_to(@note.notebook.name, notebook_path(@note.notebook)) 
     ' notebook.
   - if @note.live?
