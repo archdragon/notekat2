@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-feature 'browse notebook' do
+feature 'show notebooks' do
+  before do
+    create_user_and_sign_in
+  end
   scenario 'after login' do
-    user = create(:user)
-    sign_in_with(user.email, user.password)
     expect(page).to have_css(".notebook-link")
   end
 end
