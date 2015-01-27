@@ -8,9 +8,7 @@ feature 'create note' do
   scenario 'with any text' do
     note = build(:note)
 
-    visit '/'
-    fill_in 'note_text', with: note.text
-    click_button('Save new note')
+    create_note(note)
 
     expect(find('#main').find('.inner')).to have_content(note.text)
 
