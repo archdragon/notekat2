@@ -1,14 +1,16 @@
 
 .basic-container
   .notebook-info
-    span.glyphicon.glyphicon-tag Showing a note from 
+    span.glyphicon.glyphicon-file  
+    '  Showing a note from
     = link_to(@note.notebook.name, notebook_path(@note.notebook)) 
-    ' notebook.
-  - if @note.live?
-    .versions
-      | This is a current version of this note.
+    '  notebook
 
-- if !@note.live?
-  .basic-container
-    | This is an archived version!
+.basic-container
+  - if !@note.live?
+    span.glyphicon.glyphicon-floppy-disk  
+    '  This is an archived version!
+  - else 
+    span.glyphicon.glyphicon-ok
+    '  This is the current version of this note.
 = render @note
