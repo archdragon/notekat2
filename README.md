@@ -1,6 +1,6 @@
 # Notekat
 
-{<img src="https://codeclimate.com/github/archdragon/notekat2/badges/gpa.svg" />}[https://codeclimate.com/github/archdragon/notekat2]
+[![Code Climate](https://codeclimate.com/github/archdragon/notekat2/badges/gpa.svg)](https://codeclimate.com/github/archdragon/notekat2)
 
 Simple online notepad with edit history and flexible tag system.
 
